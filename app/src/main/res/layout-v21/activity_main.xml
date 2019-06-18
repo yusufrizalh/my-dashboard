@@ -11,11 +11,26 @@
         android:layout_height="match_parent">
 
         <Toolbar
+            android:id="@+id/toolbar"
+            android:background="@color/toolBarColor"
+            android:minHeight="?android:attr/actionBarSize"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
+            
         </Toolbar>
 
     </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:background="#FFFFFF"
+        android:scrollbars="vertical"
+        android:layout_gravity="left"
+        android:layout_width="320dp"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.drawerlayout.widget.DrawerLayout>
