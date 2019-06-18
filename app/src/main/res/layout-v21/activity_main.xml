@@ -25,7 +25,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:background="#FFFFFF"
+        android:background="@color/WhiteSmoke"
         android:scrollbars="vertical"
         android:layout_gravity="left"
         android:layout_width="320dp"
