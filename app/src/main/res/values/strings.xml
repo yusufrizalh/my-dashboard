@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">RZ Android Dashboard</string>
+    <string-array name="navDrawerItems">
+        <item>Charts</item>
+        <item>Listview</item>
+        <item>Cardview</item>
+        <item>Progress</item>
+        <item>Clock</item>
+        <item>Connect</item>
+    </string-array>
+
+    <string-array name="navDrawerIcons">
+        <item>@drawable/squad</item>
+        <item>@drawable/fixtures</item>
+        <item>@drawable/table</item>
+        <item>@drawable/transfer</item>
+        <item>@drawable/gallery</item>
+        <item>@drawable/connect</item>
+    </string-array>
+</resources>
