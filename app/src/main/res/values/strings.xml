@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">RZ Android Dashboard</string>
     <string-array name="navDrawerItems">
-        <item>Charts</item>
-        <item>Listview</item>
-        <item>Cardview</item>
-        <item>Progress</item>
-        <item>Clock</item>
-        <item>Connect</item>
+        <item>Fragment 1</item>
+        <item>Fragment 2</item>
+        <item>Fragment 3</item>
+        <item>Fragment 4</item>
+        <item>Fragment 5</item>
+        <item>Fragment 6</item>
     </string-array>
 
     <string-array name="navDrawerIcons">
