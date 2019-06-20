@@ -2,6 +2,7 @@ package id.inixindosurabaya.rzandroiddashboard;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -108,7 +109,15 @@ public class LihatSemuaData extends AppCompatActivity implements AdapterView.OnI
     }
 
     @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
+    public void onItemClick(AdapterView<?> parent,
+                            View view, int position, long id) {
+        // jika salah satu item diklik maka muncul detail
+        Intent myIntent = new Intent(LihatSemuaData.this,
+                LihatDetailData.class);
+        HashMap<String, String> map =
+                (HashMap)parent.getItemAtPosition(position);
+        String pgwId = map.get(Konfigurasi.TAG_ID).toString();
+        myIntent.putExtra(Konfigurasi.PGW_ID, pgwId);
+        startActivity(myIntent);
     }
 }
