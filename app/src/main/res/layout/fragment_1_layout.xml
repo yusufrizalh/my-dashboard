@@ -1,16 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:gravity="center"
+    android:padding="16dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:text="FRAGMENT 1"
-        android:textSize="24sp"
+        android:text="FORM TAMBAH DATA PEGAWAI"
+        android:textSize="18sp"
         android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
         android:gravity="center"
-        android:textColor="@color/DarkMagenta"
+        android:layout_marginTop="54dp"
+        android:layout_marginBottom="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="Nama Pegawai"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/editNama"
+        android:hint="Nama Pegawai"
+        android:layout_marginBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+    android:text="Jabatan Pegawai"
+    android:textSize="18sp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/editJabatan"
+        android:hint="Jabatan Pegawai"
+        android:layout_marginBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="Gaji Pegawai"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/editGaji"
+        android:hint="Gaji Pegawai"
+        android:digits="0123456789."
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnSimpan"
+        android:text="Simpan Data Pegawai"
+        android:textColor="@color/colorPrimary"
+        android:background="@null"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnLihatData"
+        android:text="Lihat Data Pegawai"
+        android:textColor="@color/colorPrimary"
+        android:background="@android:color/transparent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
