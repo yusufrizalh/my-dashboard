@@ -6,11 +6,19 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-class LihatSemuaData extends AppCompatActivity implements AdapterView.OnItemClickListener {
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class LihatSemuaData extends AppCompatActivity implements AdapterView.OnItemClickListener {
     // GLOBAL VARIABLES
     private ListView listView;
     private String JSON_STRING;
@@ -63,7 +71,40 @@ class LihatSemuaData extends AppCompatActivity implements AdapterView.OnItemClic
     }
 
     private void tampilkanSemuaDataPegawai() {
-        
+        // menampilkan JSON dari web server ke aplikasi android
+        // membuat JSON Object
+        JSONObject jsonObject = null;
+        ArrayList<HashMap<String, String>> list = new ArrayList<>();
+
+        try {
+            jsonObject = new JSONObject(JSON_STRING);
+            JSONArray result = jsonObject
+                    .getJSONArray(Konfigurasi.TAG_JSON_ARRAY);
+            // tampilkan nilai JSON
+            for (int i = 0; i < result.length(); i++) {
+                JSONObject jo = result.getJSONObject(i);
+                String id = jo.getString(Konfigurasi.TAG_ID);
+                String name = jo.getString(Konfigurasi.TAG_NAMA);
+
+                HashMap<String, String> pegawai = new HashMap<>();
+                pegawai.put(Konfigurasi.TAG_ID, id);
+                pegawai.put(Konfigurasi.TAG_NAMA, name);
+                list.add(pegawai);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        // buat adapter untuk meletakkan data json array
+        // kedalam list view
+        ListAdapter adapter = new SimpleAdapter(
+                getApplicationContext(), list,
+                R.layout.list_item,
+                new String[]{Konfigurasi.TAG_ID, Konfigurasi.TAG_NAMA},
+                new int[]{R.id.id, R.id.name}
+        );
+        listView.setAdapter(adapter);
+
     }
 
     @Override
