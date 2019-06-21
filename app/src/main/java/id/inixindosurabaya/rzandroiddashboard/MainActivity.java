@@ -10,9 +10,14 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.ClipData;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -80,4 +85,37 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(tool_bar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
+
+    // custom menu dalam toolbar
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    // method jika salah satu item menu diklik
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // item yg mana yg diklik
+        // pilihan dengan switch case / if else
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.item1:
+                Toast.makeText(this,
+                        "Item 1 Diklik", Toast.LENGTH_LONG).show();
+                Log.d("Message", "Item 1 Diklik");
+                return true;
+            case R.id.item2:
+                Toast.makeText(this,
+                        "Item 2 Diklik", Toast.LENGTH_LONG).show();
+                Log.d("Message", "Item 2 Diklik");
+                return true;
+            case R.id.item3:
+                Toast.makeText(this,
+                        "Item 3 Diklik", Toast.LENGTH_LONG).show();
+                Log.d("Message", "Item 3 Diklik");
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 }
