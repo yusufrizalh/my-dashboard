@@ -115,6 +115,11 @@ public class RecyclerViewAdapter extends
                     transaction.replace(R.id.containerView, fragment3);
                     transaction.commit();
                     break;
+                case 4:
+                    Fragment fragment4 = new Fragment_4();
+                    transaction.replace(R.id.containerView, fragment4);
+                    transaction.commit();
+                    break;
             }
         }
     }
